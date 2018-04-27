@@ -65,7 +65,6 @@ public class PigLatin {
 			if (vowelIndex == -1) {// if the word does not has a vowel
 				continue;
 			} else {
-				
 				// split the word at the vowel and cast the front part to the end
 				wordAfter = word.substring(wordIndex);
 				

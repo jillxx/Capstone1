@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class PigLatin {
 
 	public static void main(String[] args) {
+		String cont = "y";
+		
+		while (cont.equalsIgnoreCase("y")) {
+		System.out.println("Welcome to the Pig Latin Translator!");
 		Scanner scnr = new Scanner(System.in);
 
 		// prompt user to input a word
@@ -13,7 +17,7 @@ public class PigLatin {
 		String input = scnr.nextLine();
 
 		// convert to lowercase
-		input = input.toLowerCase();
+		//input = input.toLowerCase();
 
 		// translate to pig latin
 		String output = "";
@@ -29,12 +33,19 @@ public class PigLatin {
 
 		System.out.println(output);
 		// prompt user for another word
-		scnr.close();
+		// ask the user if he wants too continue
+		System.out.println("\nContinue?(y/n): ");
+		cont = scnr.next();
+    
+	}
+	System.out.println("Goodbye!");
+	
 	}
 
 	public static boolean isVowel(String word) {
 
 		if (word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o")
+				|| word.startsWith("u") || word.startsWith("a") || word.startsWith("e") || word.startsWith("i") || word.startsWith("o")
 				|| word.startsWith("u")) {
 			return true;
 		}
@@ -51,7 +62,7 @@ public class PigLatin {
 
 	// translate when start with consonant
 	public static String translateConsonant(String word) {
-		String vowel = "aeiou";
+		String vowel = "aeiouAEIOU";
 		String pigword = "";
 		String wordAfter = word;// if no vowel, it give original word+ay
 		String wordBefore = "";

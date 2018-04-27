@@ -68,7 +68,7 @@ public class PigLatin {
 				
 				// split the word at the vowel and cast the front part to the end
 				wordAfter = word.substring(wordIndex);
-				System.out.println(wordAfter);
+				
 				wordBefore = word.substring(0, wordIndex);
 				break;// if find a vowel, piglatin it and break the loop
 			}
